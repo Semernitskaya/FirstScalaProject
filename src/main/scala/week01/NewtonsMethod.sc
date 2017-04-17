@@ -1,15 +1,19 @@
-def sqrtIteration(guess: Double, target: Double): Double =
-  if (isGoodEnough(guess, target)) guess
-  else sqrtIteration(improve(guess, target), target)
+def sqrt(target: Double) = {
 
-def improve(guess: Double, target: Double) =
-  (guess + target / guess) / 2
+  def sqrtIteration(guess: Double): Double =
+    if (isGoodEnough(guess)) guess
+    else sqrtIteration(improve(guess))
 
-def isGoodEnough(guess: Double, target: Double) =
-  Math.abs(guess * guess - target) / target < 0.0001
+  def improve(guess: Double) =
+    (guess + target / guess) / 2
 
-def sqrt(x: Double) = sqrtIteration(x/2, x)
+  def isGoodEnough(guess: Double) =
+    Math.abs(guess * guess - target) / target < 0.0001
 
+  sqrtIteration(target / 2)
+}
+
+sqrt(4)
+sqrt(2)
 sqrt(1e-6) * sqrt(1e-6)
-
 sqrt(1.0e90)

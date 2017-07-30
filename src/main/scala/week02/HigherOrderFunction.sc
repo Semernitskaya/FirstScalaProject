@@ -57,6 +57,5 @@ def tailRecProductF(f: Int => Int, left: Int, right: Int) = {
 def factorial(n: Int) = tailRecProductF(same, 1, n)
 factorial(5)
 
-def
 
 

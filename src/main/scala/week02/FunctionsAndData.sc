@@ -36,12 +36,15 @@ r1.add(r2)
 r1.neg
 r2.sub(r1)
 
+r1 add r2
+r2 sub r1
+
 val x = new Rational(1, 3)
 val y = new Rational(5, 7)
 val z = new Rational(3, 2)
 x.sub(y).sub(z)
 x.less(y)
-z.less(x)
+z less x 
 x.max(y)
 
 //val incorrect = new Rational(1, 0)

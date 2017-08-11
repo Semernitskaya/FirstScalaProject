@@ -8,23 +8,31 @@ trait Planar {
   def surface: Int = height * width
 }
 
-trait Colored {
-  def fill(color: Int)
+//diamond problem
+trait Lined {
+  def line(color: Int): String
 }
 
-abstract class Shape extends Colored {
-
+trait SlashLined extends Lined {
+  override def line(color: Int) = f"---------${color}---------"
 }
 
-class Square(h: Int, w: Int) extends Shape with Planar {
+trait DotLined extends Lined {
+  override def line(color: Int) = f"-.-.-.-.-.-.-${color}-.-.-.-.-.-.-"
+}
+
+//last win
+class Square(h: Int, w: Int) extends Planar with SlashLined with DotLined   {
   override def height: Int = h
 
   override def width: Int = w
 
-  override def fill(color: Int): Unit = print("fill with color %s", color)
+  def fill(color: Int): Unit = print("fill with color %s", color)
 }
 
 var shape = new Square(4, 2)
 shape.surface
 shape.fill(1)
+shape.line(3)
+
 

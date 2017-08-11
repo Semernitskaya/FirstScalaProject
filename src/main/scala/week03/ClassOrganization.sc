@@ -21,7 +21,7 @@ new Date(1)
 
 //traits
 trait A {
-  val aa = ""
+  val aa
 
   var aaa = ""
 
@@ -42,11 +42,15 @@ class AB extends A with B with C {
   override def c = "ab ccc"
 
   override def abstractB: Unit = ???
+
+  override val aa = ""
 }
 
 object AB extends A with B with C {
   override def abstractB: Unit = ???
-}
-AB.c
 
+  override val aa = ""
+}
+
+AB.c
 new AB().c

@@ -7,5 +7,5 @@ class LinkedList[T](val head: T, val tail: List[T]) extends List[T] {
 
   override def isEmpty: Boolean = false
 
-  override def add(elem: T) = new LinkedList[T](elem, this)
+  override def add[U >: T](elem: U) = new LinkedList[U](elem, this)
 }

@@ -11,5 +11,5 @@ class Nil[T] extends List[T] {
 
   override def tail = throw new NoSuchElementException("Nil.tail")
 
-  override def add(elem: T) = new LinkedList(elem, this)
+  override def add[U >: T](elem: U) = new LinkedList(elem, this)
 }

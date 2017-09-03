@@ -27,6 +27,14 @@ ar(2)
 
 (2 to 5).sum
 (2 to 5).product
+(2 to 5).toSet
 
 "abc" flatMap(x => List('7' , x))
+
+def simpleIsPrime(n: Int) = (2 until  n)  forall( x => n % x != 0)
+
+simpleIsPrime(1)
+simpleIsPrime(2)
+simpleIsPrime(17)
+simpleIsPrime(4)
 
